@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Skin Club Brasil</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #26221F;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .link-btn {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .link-btn:active {
+      transform: scale(0.985);
+    }
+
+    /* Modal Backdrop & Animation */
+    .modal-backdrop {
+      background: rgba(38, 34, 31, 0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    /* Custom scroll inside modal */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D5C4B3;
+      border-radius: 99px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-between px-5 py-12 sm:py-16 selection:bg-[#EADBCE]">
+
+  <!-- Container Principal -->
+  <div class="w-full max-w-[380px] flex flex-col items-center text-center space-y-8">
+
+    <!-- Header: Avatar + Título + Bio Curta -->
+    <div class="flex flex-col items-center space-y-3.5">
+      <!-- Avatar Minimalista -->
+      <div class="w-24 h-24 rounded-full p-[2px] bg-stone-200/80 shadow-sm">
+        <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
+          <img 
+            src="https://scontent.cdninstagram.com/v/t51.82787-15/785281866_17875330554628722_2795718504793532105_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QGF6jqdm-LIQ7kNvwGgMgqU&_nc_oc=AdonsBoM2yi-NWE-OQe2qh36zNm3QTUmdvwaymrTgyr5-F_5aiKsauCwAZIMzkNzbYQAMS8YPY5xLs_ucb1Uq0oK&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bVnV2rL9UJ-72yiTRWG69Q&_nc_ss=7b689&oh=00_AQJYOhMamp1_MyHvaTMrOqCtS_96nVX0Vz-10Agc05kxRA&oe=6AAF5EF6" 
+            alt="Skin Club Brasil" 
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div style="display: none;" class="w-full h-full flex items-center justify-center font-serif text-xl tracking-wider text-stone-700 font-semibold bg-[#F5EFE9]">
+            SC
+          </div>
+        </div>
+      </div>
+
+      <!-- Nome -->
+      <div class="space-y-1">
+        <h1 class="font-serif text-2xl sm:text-[26px] font-semibold tracking-tight text-[#26221F]">
+          Skin Club Brasil
+        </h1>
+        <p class="text-xs text-stone-500 font-medium tracking-wide">
+          @skinclubbrasil • São José do Rio Preto
+        </p>
+      </div>
+
+      <!-- Frase única e limpa -->
+      <p class="text-xs sm:text-[13px] text-stone-600 leading-relaxed max-w-[320px] pt-0.5">
+        Seu clube de autocuidado e estética integrada.
+      </p>
+    </div>
+
+    <!-- Links / Botões Ultra Limpos -->
+    <div class="w-full space-y-3">
+
+      <!-- Botão 1: Lista VIP (Destaque Elegante) -->
+      <a 
+        href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+entrar+na+Lista+VIP+da+Skin+Club+Brasil." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs sm:text-[13px] font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+      >
+        Lista VIP
+      </a>
+
+      <!-- Botão 2: Falar no WhatsApp -->
+      <a 
+        href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+a+Skin+Club+Brasil." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Falar no WhatsApp
+      </a>
+
+      <!-- Botão 3: Menu de Tratamentos (Abre Pop-up) -->
+      <button 
+        type="button"
+        onclick="openModal('modalTreatments')"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Menu de Tratamentos
+      </button>
+
+      <!-- Botão 4: Como Funciona o Clube (Abre Pop-up) -->
+      <button 
+        type="button"
+        onclick="openModal('modalClub')"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Como Funciona o Clube
+      </button>
+
+      <!-- Botão 5: Instagram Oficial -->
+      <a 
+        href="https://www.instagram.com/skinclubbrasil/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Instagram Oficial
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Footer Discreto -->
+  <footer class="text-center pt-12 space-y-1 text-stone-400 text-[11px]">
+    <p class="font-serif italic text-stone-500 text-xs">"Seu tempo começa aqui."</p>
+    <p>© Skin Club Brasil • São José do Rio Preto, SP</p>
+  </footer>
+
+
+  <!-- ================= POP-UPS / MODAIS CLEAN ================= -->
+
+  <!-- 1. POP-UP: MENU DE TRATAMENTOS -->
+  <div id="modalTreatments" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop com clique para fechar -->
+    <div class="modal-backdrop absolute inset-0 transition-opacity" onclick="closeModal('modalTreatments')"></div>
+    
+    <!-- Caixa do Pop-up -->
+    <div class="relative bg-[#FAF8F5] border border-stone-200/80 rounded-3xl w-full max-w-sm p-6 z-10 shadow-2xl space-y-5 max-h-[85vh] flex flex-col">
+      
+      <!-- Topo do Pop-up -->
+      <div class="flex items-center justify-between border-b border-stone-200/60 pb-3">
+        <div>
+          <h2 class="font-serif text-lg font-semibold text-[#26221F]">Menu de Tratamentos</h2>
+          <p class="text-[11px] text-stone-500">Protocolos de saúde, estética e bem-estar</p>
+        </div>
+        <button onclick="closeModal('modalTreatments')" class="text-stone-400 hover:text-stone-800 p-1 rounded-full hover:bg-stone-200/50 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Lista de Tratamentos Genéricos -->
+      <div class="space-y-3.5 overflow-y-auto custom-scroll pr-1 text-left text-xs text-stone-700">
+        
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Limpeza de Pele Profunda</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Higienização com extração delicada, hidratação profunda e revitalização facial.</p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Protocolo Facial Glow & Peeling</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Renovação celular, uniformização da textura da pele e luminosidade imediata.</p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Massagem Relaxante & Aromaterapia</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Pausa sensorial com óleos botânicos para alívio de tensões e relaxamento total.</p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Drenagem Linfática Corporal</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Redução de retenção hídrica, melhora da circulação e desintoxicação corporal.</p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Protocolo Detox & Redução de Medidas</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Estímulo metabólico e tecnologia de alta performance para firmeza corporal.</p>
+        </div>
+
+      </div>
+
+      <!-- Botão de Ação no Pop-up -->
+      <div class="pt-1">
+        <a 
+          href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+consultar+os+tratamentos+da+Skin+Club+Brasil." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 px-4 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+        >
+          Consultar Horários no WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- 2. POP-UP: COMO FUNCIONA O CLUBE (TEXTO EM LATIM) -->
+  <div id="modalClub" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop com clique para fechar -->
+    <div class="modal-backdrop absolute inset-0 transition-opacity" onclick="closeModal('modalClub')"></div>
+    
+    <!-- Caixa do Pop-up -->
+    <div class="relative bg-[#FAF8F5] border border-stone-200/80 rounded-3xl w-full max-w-sm p-6 z-10 shadow-2xl space-y-5 max-h-[85vh] flex flex-col">
+      
+      <!-- Topo do Pop-up -->
+      <div class="flex items-center justify-between border-b border-stone-200/60 pb-3">
+        <div>
+          <h2 class="font-serif text-lg font-semibold text-[#26221F]">Como Funciona o Clube</h2>
+          <p class="text-[11px] text-stone-500">Regras e diretrizes da assinatura</p>
+        </div>
+        <button onclick="closeModal('modalClub')" class="text-stone-400 hover:text-stone-800 p-1 rounded-full hover:bg-stone-200/50 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Conteúdo em Latim (Exemplificativo) -->
+      <div class="space-y-3 overflow-y-auto custom-scroll pr-1 text-left text-xs text-stone-600 leading-relaxed">
+        
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">1. Regula Prima: Adhesio et Credita</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+          </p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">2. Regula Secunda: Constancia et Beneficia</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
+          </p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">3. Regula Tertia: Privilegia et Cancelatio</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Botão de Ação no Pop-up -->
+      <div class="pt-1">
+        <a 
+          href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+entender+as+regras+do+clube+de+assinatura+da+Skin+Club+Brasil." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 px-4 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+        >
+          Tirar Dúvidas no WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= JAVASCRIPT SIMPLES PARA OS MODAIS ================= -->
+  <script>
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal('modalTreatments');
+        closeModal('modalClub');
+      }
+    });
+  </script>
+
+</body>
+</html>
