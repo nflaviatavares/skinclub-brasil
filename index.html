@@ -1,1114 +1,314 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skin Club Brasil | Sobre Nós — Clínica Estética & Skincare Boutique</title>
-  <meta name="description" content="O seu refúgio de saúde da pele, estética avançada e clube de autocuidado. Tratamentos personalizados, HydraFacial, peelings, microagulhamento e boutique exclusiva em São José do Rio Preto." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Skin Club Brasil</title>
   
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
-
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
   
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              black: '#0c0c0e',
-              dark: '#131317',
-              darkCard: '#18181f',
-              charcoal: '#23232b',
-              gold: '#cbb08b',
-              goldLight: '#e4d3bc',
-              cream: '#faf8f5',
-              creamDark: '#f0ece4',
-              softGray: '#8e8e98',
-              accent: '#d97757'
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
-            editorial: ['"Cormorant Garamond"', 'serif']
-          }
-        }
-      }
-    }
-  </script>
 
   <style>
-    .font-italic-serif {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 500;
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #26221F;
+      -webkit-tap-highlight-color: transparent;
     }
-    
-    .pill-btn {
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    .font-serif {
+      font-family: 'Playfair Display', serif;
     }
-    .pill-btn:hover {
-      transform: translateY(-2px);
+    .link-btn {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
-    .glass-dark {
-      background: rgba(19, 19, 23, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .link-btn:active {
+      transform: scale(0.985);
     }
 
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
+    /* Modal Backdrop & Animation */
+    .modal-backdrop {
+      background: rgba(38, 34, 31, 0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
-    ::-webkit-scrollbar-track {
-      background: #0c0c0e;
+
+    /* Custom scroll inside modal */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
     }
-    ::-webkit-scrollbar-thumb {
-      background: #2a2a35;
-      border-radius: 4px;
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #cbb08b;
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D5C4B3;
+      border-radius: 99px;
     }
   </style>
 </head>
 
-<body class="bg-[#0c0c0e] text-white font-sans antialiased selection:bg-brand-gold selection:text-black">
+<body class="min-h-screen flex flex-col items-center justify-between px-5 py-12 sm:py-16 selection:bg-[#EADBCE]">
 
-  <!-- TOP ANNOUNCEMENT BAR (Estilo Nakie Face) -->
-  <div class="bg-brand-cream text-brand-black text-center py-2.5 px-4 text-xs md:text-sm font-medium tracking-wide border-b border-brand-creamDark flex items-center justify-center gap-2">
-    <span>✨ Aproveite seu <strong>1º Protocolo Facial Glow por R$ 149</strong> com avaliação completa!</span>
-    <a href="#agendamento" class="underline font-semibold hover:opacity-75 transition-opacity ml-1">Garantir Vaga &rarr;</a>
-  </div>
+  <!-- Container Principal -->
+  <div class="w-full max-w-[380px] flex flex-col items-center text-center space-y-8">
 
-  <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 z-50 bg-[#0c0c0e]/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-      
-      <!-- LOGO -->
-      <a href="#" class="flex items-center gap-2 group">
-        <span class="text-2xl md:text-3xl font-serif font-bold tracking-tight text-white uppercase group-hover:text-brand-gold transition-colors">
-          SKIN CLUB
-        </span>
-        <span class="text-2xl md:text-3xl font-editorial italic font-normal text-brand-gold -ml-1">
-          brasil
-        </span>
+    <!-- Header: Avatar + Título + Bio Curta -->
+    <div class="flex flex-col items-center space-y-3.5">
+      <!-- Avatar Minimalista -->
+      <div class="w-24 h-24 rounded-full p-[2px] bg-stone-200/80 shadow-sm">
+        <div class="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
+          <img 
+            src="https://scontent.cdninstagram.com/v/t51.82787-15/785281866_17875330554628722_2795718504793532105_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=QGF6jqdm-LIQ7kNvwGgMgqU&_nc_oc=AdonsBoM2yi-NWE-OQe2qh36zNm3QTUmdvwaymrTgyr5-F_5aiKsauCwAZIMzkNzbYQAMS8YPY5xLs_ucb1Uq0oK&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=bVnV2rL9UJ-72yiTRWG69Q&_nc_ss=7b689&oh=00_AQJYOhMamp1_MyHvaTMrOqCtS_96nVX0Vz-10Agc05kxRA&oe=6AAF5EF6" 
+            alt="Skin Club Brasil" 
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div style="display: none;" class="w-full h-full flex items-center justify-center font-serif text-xl tracking-wider text-stone-700 font-semibold bg-[#F5EFE9]">
+            SC
+          </div>
+        </div>
+      </div>
+
+      <!-- Nome -->
+      <div class="space-y-1">
+        <h1 class="font-serif text-2xl sm:text-[26px] font-semibold tracking-tight text-[#26221F]">
+          Skin Club Brasil
+        </h1>
+        <p class="text-xs text-stone-500 font-medium tracking-wide">
+          @skinclubbrasil • São José do Rio Preto
+        </p>
+      </div>
+
+      <!-- Frase única e limpa -->
+      <p class="text-xs sm:text-[13px] text-stone-600 leading-relaxed max-w-[320px] pt-0.5">
+        Seu clube de autocuidado e estética integrada.
+      </p>
+    </div>
+
+    <!-- Links / Botões Ultra Limpos -->
+    <div class="w-full space-y-3">
+
+      <!-- Botão 1: Lista VIP (Destaque Elegante) -->
+      <a 
+        href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+entrar+na+Lista+VIP+da+Skin+Club+Brasil." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs sm:text-[13px] font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+      >
+        Lista VIP
       </a>
 
-      <!-- DESKTOP NAV -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
-        <a href="#sobre" class="hover:text-white transition-colors py-1 text-white border-b border-brand-gold">Sobre Nós</a>
-        <a href="#servicos" class="hover:text-white transition-colors py-1">Tratamentos</a>
-        <a href="#clube" class="hover:text-white transition-colors py-1 flex items-center gap-1.5">
-          <span>Clube de Cuidados</span>
-          <span class="bg-brand-gold/20 text-brand-gold text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Exclusivo</span>
-        </a>
-        <a href="#equipe" class="hover:text-white transition-colors py-1">Corpo Clínico</a>
-        <a href="#boutique" class="hover:text-white transition-colors py-1">Boutique</a>
-        <a href="#faq" class="hover:text-white transition-colors py-1">Dúvidas</a>
-      </nav>
+      <!-- Botão 2: Falar no WhatsApp -->
+      <a 
+        href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+a+Skin+Club+Brasil." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Falar no WhatsApp
+      </a>
 
-      <!-- CTA BUTTON -->
-      <div class="flex items-center gap-4">
-        <a href="#agendamento" class="pill-btn inline-flex items-center gap-3 bg-white text-brand-black px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-brand-gold hover:text-black transition-colors shadow-lg">
-          <span>Agendar Sessão</span>
-          <div class="w-6 h-6 rounded-full bg-brand-black text-white flex items-center justify-center">
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </a>
+      <!-- Botão 3: Menu de Tratamentos (Abre Pop-up) -->
+      <button 
+        type="button"
+        onclick="openModal('modalTreatments')"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Menu de Tratamentos
+      </button>
 
-        <!-- Mobile Menu Toggle -->
-        <button id="mobileMenuBtn" class="lg:hidden p-2 text-white/80 hover:text-white" aria-label="Abrir Menu">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+      <!-- Botão 4: Como Funciona o Clube (Abre Pop-up) -->
+      <button 
+        type="button"
+        onclick="openModal('modalClub')"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Como Funciona o Clube
+      </button>
+
+      <!-- Botão 5: Instagram Oficial -->
+      <a 
+        href="https://www.instagram.com/skinclubbrasil/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-btn w-full py-4 px-6 rounded-full bg-white border border-stone-200 text-stone-800 text-xs sm:text-[13px] font-medium tracking-wide flex items-center justify-center hover:border-stone-400 hover:bg-stone-50 transition shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
+      >
+        Instagram Oficial
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Footer Discreto -->
+  <footer class="text-center pt-12 space-y-1 text-stone-400 text-[11px]">
+    <p class="font-serif italic text-stone-500 text-xs">"Seu tempo começa aqui."</p>
+    <p>© Skin Club Brasil • São José do Rio Preto, SP</p>
+  </footer>
+
+
+  <!-- ================= POP-UPS / MODAIS CLEAN ================= -->
+
+  <!-- 1. POP-UP: MENU DE TRATAMENTOS -->
+  <div id="modalTreatments" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop com clique para fechar -->
+    <div class="modal-backdrop absolute inset-0 transition-opacity" onclick="closeModal('modalTreatments')"></div>
+    
+    <!-- Caixa do Pop-up -->
+    <div class="relative bg-[#FAF8F5] border border-stone-200/80 rounded-3xl w-full max-w-sm p-6 z-10 shadow-2xl space-y-5 max-h-[85vh] flex flex-col">
+      
+      <!-- Topo do Pop-up -->
+      <div class="flex items-center justify-between border-b border-stone-200/60 pb-3">
+        <div>
+          <h2 class="font-serif text-lg font-semibold text-[#26221F]">Menu de Tratamentos</h2>
+          <p class="text-[11px] text-stone-500">Protocolos de saúde, estética e bem-estar</p>
+        </div>
+        <button onclick="closeModal('modalTreatments')" class="text-stone-400 hover:text-stone-800 p-1 rounded-full hover:bg-stone-200/50 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
         </button>
       </div>
 
-    </div>
+      <!-- Lista de Tratamentos Genéricos -->
+      <div class="space-y-3.5 overflow-y-auto custom-scroll pr-1 text-left text-xs text-stone-700">
+        
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Limpeza de Pele Profunda</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Higienização com extração delicada, hidratação profunda e revitalização facial.</p>
+        </div>
 
-    <!-- MOBILE MENU DROPDOWN -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-brand-dark border-b border-white/10 px-6 py-6 space-y-4 text-base">
-      <a href="#sobre" class="block text-white font-medium py-2 border-b border-white/5">Sobre Nós</a>
-      <a href="#servicos" class="block text-white/80 hover:text-white py-2 border-b border-white/5">Tratamentos</a>
-      <a href="#clube" class="block text-white/80 hover:text-white py-2 border-b border-white/5">Clube de Cuidados</a>
-      <a href="#equipe" class="block text-white/80 hover:text-white py-2 border-b border-white/5">Corpo Clínico</a>
-      <a href="#boutique" class="block text-white/80 hover:text-white py-2 border-b border-white/5">Boutique</a>
-      <a href="#faq" class="block text-white/80 hover:text-white py-2">Dúvidas Frequentes</a>
-      <a href="#agendamento" class="block w-full text-center bg-brand-gold text-black font-semibold py-3 rounded-full mt-4">
-        Agendar pelo WhatsApp ↗
-      </a>
-    </div>
-  </header>
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Protocolo Facial Glow & Peeling</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Renovação celular, uniformização da textura da pele e luminosidade imediata.</p>
+        </div>
 
-  <!-- HERO SECTION (Identical in feeling to Nakie Face Hero) -->
-  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-white/10">
-    <!-- Background Image with Dark Vignette Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop" 
-        alt="Tratamento Estético Skin Club Brasil" 
-        class="w-full h-full object-cover object-center scale-105 filter brightness-40 contrast-110"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0c0c0e] via-[#0c0c0e]/70 to-[#0c0c0e]/80"></div>
-    </div>
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Massagem Relaxante & Aromaterapia</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Pausa sensorial com óleos botânicos para alívio de tensões e relaxamento total.</p>
+        </div>
 
-    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center py-20">
-      
-      <!-- Tag / Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-8">
-        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-        <span class="text-xs font-semibold uppercase tracking-widest text-brand-goldLight">São José do Rio Preto • SP</span>
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Drenagem Linfática Corporal</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Redução de retenção hídrica, melhora da circulação e desintoxicação corporal.</p>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">Protocolo Detox & Redução de Medidas</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">Estímulo metabólico e tecnologia de alta performance para firmeza corporal.</p>
+        </div>
+
       </div>
 
-      <!-- Main Hero Heading -->
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8">
-        Sobre <span class="font-editorial italic font-normal text-brand-gold font-serif">Nós</span>
-      </h1>
-
-      <!-- Hero Subtitle -->
-      <p class="text-lg md:text-2xl text-white/85 font-light leading-relaxed max-w-3xl mx-auto mb-10">
-        Na <strong class="text-white font-semibold">Skin Club Brasil</strong>, vamos muito além do brilho passageiro — entregamos tratamentos corretivos, preventivos e regenerativos personalizados para revelar a versão mais saudável, firme e radiante da sua pele.
-      </p>
-
-      <!-- Action Button -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#manifesto" class="pill-btn inline-flex items-center gap-3 bg-brand-cream text-brand-black px-8 py-4 rounded-full text-base font-semibold hover:bg-brand-gold transition-all shadow-2xl">
-          <span>Conhecer Nossa Filosofia</span>
-          <div class="w-7 h-7 rounded-full bg-brand-black text-white flex items-center justify-center">
-            <i data-lucide="arrow-down" class="w-4 h-4"></i>
-          </div>
-        </a>
-      </div>
-
-      <!-- Circular Scroll Indicator (Estilo Nakie Face) -->
-      <div class="mt-16 flex justify-center">
-        <a href="#manifesto" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-brand-gold hover:border-brand-gold transition-all animate-bounce" aria-label="Rolar para baixo">
-          <i data-lucide="arrow-down" class="w-5 h-5"></i>
+      <!-- Botão de Ação no Pop-up -->
+      <div class="pt-1">
+        <a 
+          href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+consultar+os+tratamentos+da+Skin+Club+Brasil." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 px-4 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+        >
+          Consultar Horários no WhatsApp
         </a>
       </div>
 
     </div>
-  </section>
+  </div>
 
-  <!-- MANIFESTO / PHILOSOPHY SECTION (Where Science Meets Skin Confidence) -->
-  <section id="manifesto" class="py-24 md:py-32 bg-brand-cream text-brand-black">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
+
+  <!-- 2. POP-UP: COMO FUNCIONA O CLUBE (TEXTO EM LATIM) -->
+  <div id="modalClub" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop com clique para fechar -->
+    <div class="modal-backdrop absolute inset-0 transition-opacity" onclick="closeModal('modalClub')"></div>
+    
+    <!-- Caixa do Pop-up -->
+    <div class="relative bg-[#FAF8F5] border border-stone-200/80 rounded-3xl w-full max-w-sm p-6 z-10 shadow-2xl space-y-5 max-h-[85vh] flex flex-col">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        <!-- Left: Text Column -->
-        <div class="lg:col-span-7 space-y-8">
-          
-          <div class="inline-block border-b-2 border-brand-gold pb-1 text-xs uppercase tracking-widest font-bold text-brand-black/60">
-            Nossa Proposta & Filosofia
-          </div>
-
-          <h2 class="text-3xl md:text-5xl lg:text-5xl font-sans font-extrabold tracking-tight text-brand-black leading-tight">
-            Onde a ciência encontra a confiança da sua <span class="font-editorial italic font-normal text-brand-accent">pele</span>
-          </h2>
-
-          <p class="text-base md:text-lg text-brand-black/80 font-normal leading-relaxed">
-            Bem-vinda ao <strong>Skin Club Brasil</strong> — seu destino definitivo de autocuidado, estética facial e saúde dermatológica em São José do Rio Preto.
-          </p>
-
-          <p class="text-base md:text-lg text-brand-black/80 font-normal leading-relaxed">
-            Não acreditamos em soluções milagrosas ou procedimentos genéricos de 15 minutos; <strong>acreditamos na saúde e renovação da pele a longo prazo</strong>. Nossos protocolos são minuciosamente desenhados para <em>você</em> — desde o controle de acne, clareamento de manchas e hidratação profunda, até microagulhamento robótico, estimuladores de colágeno e peelings médicos.
-          </p>
-
-          <p class="text-base md:text-lg text-brand-black/80 font-normal leading-relaxed">
-            Com nosso <strong>modelo inovador de clube de membros</strong>, pacotes personalizados e uma boutique com curadoria dos melhores dermocosméticos, tornamos o cuidado contínuo com a pele acessível, descomplicado e prazeroso.
-          </p>
-
-          <div class="pt-2">
-            <a href="#agendamento" class="pill-btn inline-flex items-center gap-3 bg-brand-black text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-brand-accent transition-colors shadow-lg">
-              <span>Solicitar Avaliação Personalizada</span>
-              <div class="w-6 h-6 rounded-full bg-white text-brand-black flex items-center justify-center">
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </div>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Right: Elegant Architectural / Spa Space Photo -->
-        <div class="lg:col-span-5 relative">
-          <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-brand-creamDark relative group">
-            <img 
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" 
-              alt="Ambiente Skin Club Brasil" 
-              class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            
-            <div class="absolute bottom-6 left-6 right-6 text-white p-4 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20">
-              <p class="text-xs uppercase tracking-wider font-semibold text-brand-gold">O Espaço</p>
-              <p class="text-sm font-medium">Ambiente sensorial, acolhedor e privativo planejado para desacelerar.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- STATS / NUMBERS STRIP (Estilo Nakie Face Stats) -->
-  <section class="py-16 bg-[#0c0c0e] border-y border-white/10">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
-        
-        <!-- Stat 1 -->
-        <div class="p-6 rounded-2xl bg-brand-darkCard border border-white/5 hover:border-brand-gold/40 transition-colors">
-          <div class="text-4xl md:text-5xl font-bold font-serif text-brand-gold mb-2">R$ 199<span class="text-xl text-white/60 font-sans">/mês</span></div>
-          <h4 class="text-sm md:text-base font-semibold text-white mb-1">Planos de Membros do Clube</h4>
-          <p class="text-xs text-brand-softGray">Tratamentos mensais acumulativos sem burocracia.</p>
-        </div>
-
-        <!-- Stat 2 -->
-        <div class="p-6 rounded-2xl bg-brand-darkCard border border-white/5 hover:border-brand-gold/40 transition-colors">
-          <div class="text-4xl md:text-5xl font-bold font-serif text-white mb-2">Até 20%<span class="text-xl text-brand-gold font-sans"> OFF</span></div>
-          <h4 class="text-sm md:text-base font-semibold text-white mb-1">Desconto em Produtos na Boutique</h4>
-          <p class="text-xs text-brand-softGray">Para assinantes em todas as linhas dermocosméticas.</p>
-        </div>
-
-        <!-- Stat 3 -->
-        <div class="p-6 rounded-2xl bg-brand-darkCard border border-white/5 hover:border-brand-gold/40 transition-colors">
-          <div class="text-4xl md:text-5xl font-bold font-serif text-brand-gold mb-2">+3.500</div>
-          <h4 class="text-sm md:text-base font-semibold text-white mb-1">Protocolos Faciais Realizados</h4>
-          <p class="text-xs text-brand-softGray">99.4% de satisfação com avaliação 5 estrelas.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOUNDERS & CLINICAL DIRECTORS SPOTLIGHT (Estilo Marie Rosepink / Cynthia Hinojosa) -->
-  <section id="sobre" class="py-24 bg-brand-dark text-white">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="text-center max-w-2xl mx-auto mb-20">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Nossa Liderança</span>
-        <h2 class="text-3xl md:text-5xl font-bold mt-3 mb-4">
-          Conheça quem cuida da sua <span class="font-editorial italic font-normal text-brand-gold">saúde</span>
-        </h2>
-        <p class="text-brand-softGray text-sm md:text-base">
-          Autoridade médica, rigor científico e paixão por estética natural e regenerativa.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        
-        <!-- Specialist 1 -->
-        <div class="bg-brand-darkCard rounded-3xl p-8 md:p-10 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
-          <div class="space-y-6">
-            <div class="h-80 rounded-2xl overflow-hidden bg-brand-charcoal">
-              <img 
-                src="https://images.unsplash.com/photo-1594824813590-79883656114e?q=80&w=900&auto=format&fit=crop" 
-                alt="Fundadora & Esteticista Master Skin Club" 
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="text-2xl font-bold text-white">Dra. Camila Vasconcelos</h3>
-                <span class="text-xs text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/30">Fundadora & CEO</span>
-              </div>
-              <p class="text-xs uppercase tracking-wider text-brand-goldLight font-medium">Especialista em Estética Avançada & Cosmetologia</p>
-            </div>
-            <p class="text-sm text-white/80 leading-relaxed">
-              Com mais de 12 anos dedicados ao estudo aprofundado da derme e fisiologia da pele, Camila estruturou o Skin Club Brasil a partir da constatação de que a pele não se transforma com procedimentos esporádicos, mas com rotinas inteligentes e tratamentos clínicos periódicos.
-            </p>
-            <p class="text-sm text-white/70 leading-relaxed">
-              Sua metodologia proprietária une ativos de alta absorção, tecnologias laser e protocolos de barreira cutânea para proporcionar rejuvenescimento sem artificialismos.
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3 text-xs text-brand-softGray">
-            <i data-lucide="award" class="w-4 h-4 text-brand-gold"></i>
-            <span>Certificação Internacional em Protocolos de Rejuvenescimento Cutâneo</span>
-          </div>
-        </div>
-
-        <!-- Specialist 2 -->
-        <div class="bg-brand-darkCard rounded-3xl p-8 md:p-10 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
-          <div class="space-y-6">
-            <div class="h-80 rounded-2xl overflow-hidden bg-brand-charcoal">
-              <img 
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=900&auto=format&fit=crop" 
-                alt="Diretor Médico Skin Club" 
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="text-2xl font-bold text-white">Dr. Matheus Albuquerque</h3>
-                <span class="text-xs text-brand-gold bg-brand-gold/10 px-3 py-1 rounded-full border border-brand-gold/30">Diretor Clínico</span>
-              </div>
-              <p class="text-xs uppercase tracking-wider text-brand-goldLight font-medium">Médico Especialista em Dermatologia & Rejuvenescimento</p>
-            </div>
-            <p class="text-sm text-white/80 leading-relaxed">
-              O Dr. Matheus supervisiona toda a segurança clínica, protocolos injetáveis e biotecnologias aplicadas no Skin Club Brasil. Seu foco de atuação reside na medicina regenerativa, bioestimulação de colágeno e prevenção do envelhecimento precoce.
-            </p>
-            <p class="text-sm text-white/70 leading-relaxed">
-              Com planos de tratamento baseados em evidências, ele garante que cada associado do clube receba acompanhamento seguro, ético e perfeitamente alinhado à sua individualidade anatômica.
-            </p>
-          </div>
-          <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3 text-xs text-brand-softGray">
-            <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
-            <span>Membro das principais sociedades de medicina estética e dermatologia</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TEAM GRID (Meet our team — Estilo Nakie Face) -->
-  <section id="equipe" class="py-24 bg-[#0c0c0e] border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <!-- Topo do Pop-up -->
+      <div class="flex items-center justify-between border-b border-stone-200/60 pb-3">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Nosso Time</span>
-          <h2 class="text-3xl md:text-5xl font-bold mt-2">
-            As especialistas por trás do seu <span class="font-editorial italic font-normal text-brand-gold">glow</span>
-          </h2>
+          <h2 class="font-serif text-lg font-semibold text-[#26221F]">Como Funciona o Clube</h2>
+          <p class="text-[11px] text-stone-500">Regras e diretrizes da assinatura</p>
         </div>
-        <p class="text-brand-softGray text-sm max-w-md">
-          Cada atendimento, massagem e recomendação nasce do cuidado genuíno e da paixão pela beleza natural.
-        </p>
+        <button onclick="closeModal('modalClub')" class="text-stone-400 hover:text-stone-800 p-1 rounded-full hover:bg-stone-200/50 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Conteúdo em Latim (Exemplificativo) -->
+      <div class="space-y-3 overflow-y-auto custom-scroll pr-1 text-left text-xs text-stone-600 leading-relaxed">
         
-        <!-- Member 1 -->
-        <div class="group cursor-pointer">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-brand-charcoal mb-4 border border-white/10 group-hover:border-brand-gold/60 transition-all">
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop" 
-              alt="Esteticista Skin Club" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <h4 class="text-lg font-bold text-white group-hover:text-brand-gold transition-colors">Larissa Meireles</h4>
-          <p class="text-xs text-brand-gold font-medium mt-0.5">Esteticista & Terapeuta Facial</p>
-          <p class="text-xs text-white/60 mt-2 leading-relaxed">Especialista em extração indolor, HydraFacial e massagens lifting miofaciais.</p>
-        </div>
-
-        <!-- Member 2 -->
-        <div class="group cursor-pointer">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-brand-charcoal mb-4 border border-white/10 group-hover:border-brand-gold/60 transition-all">
-            <img 
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop" 
-              alt="Biomédica Skin Club" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <h4 class="text-lg font-bold text-white group-hover:text-brand-gold transition-colors">Beatriz Fontes</h4>
-          <p class="text-xs text-brand-gold font-medium mt-0.5">Biomédica Esteta</p>
-          <p class="text-xs text-white/60 mt-2 leading-relaxed">Foco em peelings químicos de alta precisão, microagulhamento e drug delivery.</p>
-        </div>
-
-        <!-- Member 3 -->
-        <div class="group cursor-pointer">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-brand-charcoal mb-4 border border-white/10 group-hover:border-brand-gold/60 transition-all">
-            <img 
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" 
-              alt="Massoterapeuta Skin Club" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <h4 class="text-lg font-bold text-white group-hover:text-brand-gold transition-colors">Juliana Rocha</h4>
-          <p class="text-xs text-brand-gold font-medium mt-0.5">Terapeuta Corporal & Day Spa</p>
-          <p class="text-xs text-white/60 mt-2 leading-relaxed">Especialista em drenagem linfática método exclusivo, massoterapia e relaxamento.</p>
-        </div>
-
-        <!-- Member 4 -->
-        <div class="group cursor-pointer">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-brand-charcoal mb-4 border border-white/10 group-hover:border-brand-gold/60 transition-all">
-            <img 
-              src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=600&auto=format&fit=crop" 
-              alt="Gerente do Clube Skin Club" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <h4 class="text-lg font-bold text-white group-hover:text-brand-gold transition-colors">Fernanda Lima</h4>
-          <p class="text-xs text-brand-gold font-medium mt-0.5">Concierge & Gestora de Membros</p>
-          <p class="text-xs text-white/60 mt-2 leading-relaxed">Garante agendamentos perfeitos, benefícios de membros e experiência VIP.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MENU DE SERVIÇOS & PROTOCOLOS EXCLUSIVOS -->
-  <section id="servicos" class="py-24 bg-brand-cream text-brand-black">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Menu de Tratamentos</span>
-        <h2 class="text-3xl md:text-5xl font-sans font-extrabold text-brand-black mt-2 mb-4">
-          Protocolos desenhados para a sua <span class="font-editorial italic font-normal text-brand-accent">evolução</span>
-        </h2>
-        <p class="text-brand-black/70 text-sm md:text-base">
-          Tecnologia avançada, ativos premium e protocolos com passo a passo individualizado.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Card 1: Facial Glow Signature -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-brand-creamDark flex flex-col justify-between hover:shadow-xl transition-all group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-700 px-3 py-1 rounded-full">Best Seller</span>
-              <span class="text-xs text-brand-black/50 font-medium">60 min</span>
-            </div>
-            <h3 class="text-2xl font-bold text-brand-black mb-2 group-hover:text-brand-accent transition-colors">Signature Skin Glow</h3>
-            <p class="text-sm text-brand-black/70 leading-relaxed mb-6">
-              Limpeza profunda com hidrosucção suave, extração sem marcas, peeling enzimático de renovação celular e máscara hidroplástica calmante.
-            </p>
-            <ul class="space-y-2.5 text-xs text-brand-black/80 mb-8 border-t border-brand-creamDark pt-4">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Avaliação digital da pele</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Desobstrução de poros</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Glow instantâneo sem downtime</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3 rounded-full bg-brand-creamDark hover:bg-brand-black hover:text-white text-brand-black font-semibold text-xs text-center transition-colors">
-            Agendar Signature Glow &rarr;
-          </a>
-        </div>
-
-        <!-- Card 2: Deluxe HydraFacial & LED -->
-        <div class="bg-brand-black text-white rounded-3xl p-8 shadow-xl border border-brand-gold/30 flex flex-col justify-between relative overflow-hidden group">
-          <div class="absolute -right-8 -top-8 w-24 h-24 bg-brand-gold/20 rounded-full blur-xl pointer-events-none"></div>
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider bg-brand-gold text-black px-3 py-1 rounded-full font-semibold">Experiência Deluxe</span>
-              <span class="text-xs text-white/60 font-medium">90 min</span>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Deluxe Hydra + LED Therapy</h3>
-            <p class="text-sm text-white/80 leading-relaxed mb-6">
-              Dermaplaning refinado, booster personalizado de ácido hialurônico e peptídeos, infusão antioxidante e fototerapia LED para estímulo de colágeno.
-            </p>
-            <ul class="space-y-2.5 text-xs text-white/80 mb-8 border-t border-white/10 pt-4">
-              <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i> Dermaplaning profissional incluso</li>
-              <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i> LED Terapia vermelha / azul</li>
-              <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i> Massagem drenante facial</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3 rounded-full bg-brand-gold text-black font-bold text-xs text-center hover:bg-white transition-colors">
-            Agendar Deluxe Hydra &rarr;
-          </a>
-        </div>
-
-        <!-- Card 3: Peelings Químicos & Rejuvenescimento -->
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-brand-creamDark flex flex-col justify-between hover:shadow-xl transition-all group">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider bg-stone-100 text-stone-700 px-3 py-1 rounded-full">Corretivo</span>
-              <span class="text-xs text-brand-black/50 font-medium">50 min</span>
-            </div>
-            <h3 class="text-2xl font-bold text-brand-black mb-2 group-hover:text-brand-accent transition-colors">Peeling Químico & Manchas</h3>
-            <p class="text-sm text-brand-black/70 leading-relaxed mb-6">
-              Protocolo clareador e regenerativo com ácidos de grau médico para uniformização do tom, tratamento de melasma, poros dilatados e textura irregular.
-            </p>
-            <ul class="space-y-2.5 text-xs text-brand-black/80 mb-8 border-t border-brand-creamDark pt-4">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Fórmulas de alta tolerância</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Estímulo de renovação celular</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Plano home-care alinhado</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3 rounded-full bg-brand-creamDark hover:bg-brand-black hover:text-white text-brand-black font-semibold text-xs text-center transition-colors">
-            Agendar Peeling &rarr;
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MEMBERSHIP CLUB (Por que ser membro do Skin Club?) -->
-  <section id="clube" class="py-24 bg-brand-dark text-white border-y border-white/10">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Clube de Assinatura</span>
-        <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">
-          O Skin Club <span class="font-editorial italic font-normal text-brand-gold">Membership</span>
-        </h2>
-        <p class="text-brand-softGray text-sm md:text-base">
-          A forma mais inteligente, acessível e consistente de manter sua pele impecável o ano todo.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Plano 1: Glow Member -->
-        <div class="bg-brand-darkCard rounded-3xl p-8 border border-white/10 flex flex-col justify-between hover:border-brand-gold/50 transition-all">
-          <div>
-            <span class="text-xs uppercase font-bold text-brand-softGray tracking-wider">Iniciante</span>
-            <h3 class="text-2xl font-bold mt-1 text-white">Glow Member</h3>
-            <div class="my-6">
-              <span class="text-4xl font-serif font-bold text-brand-gold">R$ 199</span>
-              <span class="text-xs text-brand-softGray">/mês</span>
-            </div>
-            <p class="text-xs text-white/70 mb-6">Ideal para manter a pele limpa, sem cravos e com viço regular.</p>
-            <ul class="space-y-3 text-xs text-white/80 border-t border-white/10 pt-6 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> 1 Protocolo Signature Glow / mês</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> 10% OFF em toda a boutique</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> Créditos acumulativos se não usar</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3 rounded-full bg-white/10 hover:bg-white hover:text-black font-semibold text-xs text-center transition-colors">
-            Assinar Glow Member
-          </a>
-        </div>
-
-        <!-- Plano 2: Radiance VIP (Destaque) -->
-        <div class="bg-gradient-to-b from-brand-charcoal to-brand-darkCard rounded-3xl p-8 border-2 border-brand-gold flex flex-col justify-between relative shadow-2xl scale-105">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-black text-[10px] font-extrabold uppercase px-4 py-1 rounded-full tracking-wider">
-            Mais Escolhido
-          </div>
-          <div>
-            <span class="text-xs uppercase font-bold text-brand-gold tracking-wider">Avançado</span>
-            <h3 class="text-2xl font-bold mt-1 text-white">Radiance Club</h3>
-            <div class="my-6">
-              <span class="text-4xl font-serif font-bold text-brand-gold">R$ 349</span>
-              <span class="text-xs text-brand-softGray">/mês</span>
-            </div>
-            <p class="text-xs text-white/80 mb-6">Para quem busca tratamento ativo antienvelhecimento, manchas e viço intenso.</p>
-            <ul class="space-y-3 text-xs text-white/90 border-t border-white/10 pt-6 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-gold"></i> 1 Deluxe Hydra + LED Therapy / mês</li>
-              <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-gold"></i> 1 Peeling Químico semestral cortesia</li>
-              <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-gold"></i> 15% OFF em dermocosméticos</li>
-              <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-gold"></i> Prioridade na agenda aos sábados</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3.5 rounded-full bg-brand-gold hover:bg-white text-black font-bold text-xs text-center transition-colors shadow-lg">
-            Quero Ser Membro Radiance
-          </a>
-        </div>
-
-        <!-- Plano 3: Elite Rejuvenation -->
-        <div class="bg-brand-darkCard rounded-3xl p-8 border border-white/10 flex flex-col justify-between hover:border-brand-gold/50 transition-all">
-          <div>
-            <span class="text-xs uppercase font-bold text-brand-softGray tracking-wider">Total Care</span>
-            <h3 class="text-2xl font-bold mt-1 text-white">Elite Day Spa</h3>
-            <div class="my-6">
-              <span class="text-4xl font-serif font-bold text-brand-gold">R$ 589</span>
-              <span class="text-xs text-brand-softGray">/mês</span>
-            </div>
-            <p class="text-xs text-white/70 mb-6">A fusão suprema entre saúde da pele e relaxamento corporal absoluto.</p>
-            <ul class="space-y-3 text-xs text-white/80 border-t border-white/10 pt-6 mb-8">
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> 1 Deluxe Facial + 1 Massoterapia / mês</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> 20% OFF na Boutique Skincare</li>
-              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-gold"></i> Acompanhamento médico trimestral</li>
-            </ul>
-          </div>
-          <a href="#agendamento" class="w-full py-3 rounded-full bg-white/10 hover:bg-white hover:text-black font-semibold text-xs text-center transition-colors">
-            Assinar Elite Spa
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Garantia / Política de Acúmulo -->
-      <div class="mt-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 text-xs text-white/80 max-w-3xl mx-auto">
-        <i data-lucide="info" class="w-6 h-6 text-brand-gold shrink-0"></i>
-        <span><strong>Ficou sem tempo no mês?</strong> Sem problemas! Suas sessões mensais nunca expiram: acumulam automaticamente como créditos na sua conta para quando você puder vir.</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SKINCARE BOUTIQUE (Skincare delivered to your door — Estilo Nakie Face) -->
-  <section id="boutique" class="py-24 bg-brand-cream text-brand-black">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Curadoria Especializada</span>
-          <h2 class="text-3xl md:text-5xl font-sans font-extrabold text-brand-black mt-2">
-            Nossa Boutique de <span class="font-editorial italic font-normal text-brand-accent">Skincare</span>
-          </h2>
-        </div>
-        <p class="text-brand-black/70 text-sm max-w-md">
-          Os mesmos dermocosméticos de grau médico utilizados nos atendimentos do Skin Club, disponíveis para sua rotina em casa ou entrega direta.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        <!-- Product 1 -->
-        <div class="bg-white rounded-2xl p-6 border border-brand-creamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-          <div>
-            <div class="aspect-square rounded-xl overflow-hidden bg-stone-50 mb-4 flex items-center justify-center p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1608248597359-299f187a4103?q=80&w=600&auto=format&fit=crop" 
-                alt="Sérum Antioxidante" 
-                class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform"
-              />
-            </div>
-            <span class="text-[10px] uppercase font-bold text-brand-accent tracking-wider">Antioxidante</span>
-            <h4 class="text-base font-bold text-brand-black mt-1">Sérum Vitamina C + Ácido Ferúlico</h4>
-            <p class="text-xs text-brand-black/60 mt-2 leading-relaxed">Proteção contra radicais livres, luminosidade e uniformização do tom.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-            <span class="text-sm font-bold text-brand-black">R$ 289</span>
-            <a href="#agendamento" class="text-xs font-semibold text-brand-accent hover:underline">Pedir no WhatsApp &rarr;</a>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="bg-white rounded-2xl p-6 border border-brand-creamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-          <div>
-            <div class="aspect-square rounded-xl overflow-hidden bg-stone-50 mb-4 flex items-center justify-center p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=600&auto=format&fit=crop" 
-                alt="Protetor Solar Fluido" 
-                class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform"
-              />
-            </div>
-            <span class="text-[10px] uppercase font-bold text-brand-accent tracking-wider">Fotoproteção</span>
-            <h4 class="text-base font-bold text-brand-black mt-1">Protetor Solar Mineral FPS 60</h4>
-            <p class="text-xs text-brand-black/60 mt-2 leading-relaxed">Toque seco, cobertura aveludada, sem resíduos brancos. Seguro para peles sensíveis.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-            <span class="text-sm font-bold text-brand-black">R$ 168</span>
-            <a href="#agendamento" class="text-xs font-semibold text-brand-accent hover:underline">Pedir no WhatsApp &rarr;</a>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="bg-white rounded-2xl p-6 border border-brand-creamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-          <div>
-            <div class="aspect-square rounded-xl overflow-hidden bg-stone-50 mb-4 flex items-center justify-center p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=600&auto=format&fit=crop" 
-                alt="Hidratante Barreira" 
-                class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform"
-              />
-            </div>
-            <span class="text-[10px] uppercase font-bold text-brand-accent tracking-wider">Recuperação</span>
-            <h4 class="text-base font-bold text-brand-black mt-1">Creme Reparador de Barreira com Ceramidas</h4>
-            <p class="text-xs text-brand-black/60 mt-2 leading-relaxed">Restauração profunda pós-procedimentos e hidratação celular contínua.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-            <span class="text-sm font-bold text-brand-black">R$ 215</span>
-            <a href="#agendamento" class="text-xs font-semibold text-brand-accent hover:underline">Pedir no WhatsApp &rarr;</a>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="bg-white rounded-2xl p-6 border border-brand-creamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-          <div>
-            <div class="aspect-square rounded-xl overflow-hidden bg-stone-50 mb-4 flex items-center justify-center p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&auto=format&fit=crop" 
-                alt="Home Care Mask" 
-                class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform"
-              />
-            </div>
-            <span class="text-[10px] uppercase font-bold text-brand-accent tracking-wider">Tratamento</span>
-            <h4 class="text-base font-bold text-brand-black mt-1">Máscara Noturna Calmante & Peptídeos</h4>
-            <p class="text-xs text-brand-black/60 mt-2 leading-relaxed">Efeito pele descansada e preenchimento fino durante as horas de sono.</p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-            <span class="text-sm font-bold text-brand-black">R$ 195</span>
-            <a href="#agendamento" class="text-xs font-semibold text-brand-accent hover:underline">Pedir no WhatsApp &rarr;</a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS / REVIEWS (What our clients are saying — Estilo Nakie Face) -->
-  <section class="py-24 bg-[#0c0c0e] border-t border-white/10 text-white">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Depoimentos & Experiências</span>
-        <h2 class="text-3xl md:text-5xl font-bold mt-2 mb-4">
-          O que dizem as nossas <span class="font-editorial italic font-normal text-brand-gold">associadas</span>
-        </h2>
-        <p class="text-brand-softGray text-sm md:text-base">
-          A confiança começa quando a sua pele finalmente recebe o cuidado correto e consistente.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Review 1 -->
-        <div class="bg-brand-darkCard p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
-          <div class="space-y-4">
-            <div class="flex text-brand-gold gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-            </div>
-            <p class="text-sm text-white/90 italic leading-relaxed">
-              "Frequento o Skin Club desde o primeiro mês de abertura em Rio Preto. Minha pele com tendência a acne nunca esteve tão limpa, uniforme e calma. O ambiente é um abraço no meio da correria do dia."
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-sm">
-              MF
-            </div>
-            <div>
-              <h5 class="text-sm font-bold text-white">Mariana Ferreira</h5>
-              <p class="text-[11px] text-brand-softGray">Membro Radiance Club há 8 meses</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="bg-brand-darkCard p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
-          <div class="space-y-4">
-            <div class="flex text-brand-gold gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-            </div>
-            <p class="text-sm text-white/90 italic leading-relaxed">
-              "O atendimento com a equipe é surreal de impecável. Não tentam te empurrar procedimentos caros desnecessários; eles realmente montam um plano para a necessidade real da sua pele."
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-sm">
-              GP
-            </div>
-            <div>
-              <h5 class="text-sm font-bold text-white">Gabriela Prado</h5>
-              <p class="text-[11px] text-brand-softGray">Empresária em São José do Rio Preto</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="bg-brand-darkCard p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all">
-          <div class="space-y-4">
-            <div class="flex text-brand-gold gap-1">
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-            </div>
-            <p class="text-sm text-white/90 italic leading-relaxed">
-              "O protocolo Deluxe Hydra com LED salvou minha pele antes do meu casamento. Minha maquiagem assentou de um jeito que nunca tinha visto. Não largo mais minha assinatura!"
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-sm">
-              LA
-            </div>
-            <div>
-              <h5 class="text-sm font-bold text-white">Letícia Andrade</h5>
-              <p class="text-[11px] text-brand-softGray">Membro Glow</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FAQ ACCORDION (Frequently Asked Questions — Estilo Nakie Face) -->
-  <section id="faq" class="py-24 bg-brand-cream text-brand-black">
-    <div class="max-w-4xl mx-auto px-6 md:px-12">
-      
-      <div class="text-center mb-16">
-        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Dúvidas Frequentes</span>
-        <h2 class="text-3xl md:text-5xl font-sans font-extrabold text-brand-black mt-2 mb-4">
-          Perguntas <span class="font-editorial italic font-normal text-brand-accent">frequentes</span>
-        </h2>
-        <p class="text-brand-black/70 text-sm md:text-base">
-          Tudo o que você precisa saber antes de agendar sua primeira visita ou se tornar membro.
-        </p>
-      </div>
-
-      <div class="space-y-4" id="faqAccordion">
-        
-        <!-- FAQ Item 1 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>O que acontece se eu não puder realizar meu tratamento no mês?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            Fique tranquila! Suas sessões de assinatura nunca expiram. Os créditos acumulam na sua conta do clube e podem ser agendados no mês seguinte, combinados com outros serviços ou até mesmo presenteados em datas especiais mediante autorização.
-          </div>
-        </div>
-
-        <!-- FAQ Item 2 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>O que está incluso no Protocolo de Boas-Vindas por R$ 149?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            O protocolo de primeiro atendimento inclui: avaliação detalhada do tipo e estado atual da sua pele, desobstrução profunda dos poros com extração indolor, peeling enzimático suave, máscara regenerativa e prescrição da rotina ideal de home-care.
-          </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>Qual a diferença entre o Signature Glow e o Deluxe Hydra + LED?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            O <strong>Signature Glow (60 min)</strong> é focado em limpeza profunda, hidratação e luminosidade. O <strong>Deluxe Hydra (90 min)</strong> inclui adicionalmente dermaplaning profissional (remoção de células mortas e penugem), booster concentrado de ativos antienvelhecimento, máscara hidroplástica e 20 minutos de fototerapia com LED medicinal para estímulo biológico de colágeno.
-          </div>
-        </div>
-
-        <!-- FAQ Item 4 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>Os tratamentos são seguros para gestantes e lactantes?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            Sim, possuímos protocolos especificamente adaptados e seguros para gestantes (sem uso de ácidos fotossensibilizantes fortes, retinoides ou tecnologias proibidas). Antes de qualquer sessão, realizamos uma anamnese detalhada para garantir 100% de segurança para você e seu bebê.
-          </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>Qual a política de cancelamento ou reagendamento?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            Pedimos o aviso prévio de até 24 horas para remarcações sem custo. Como reservamos a sala e a profissional exclusivamente para o seu horário, cancelamentos no mesmo dia podem implicar na perda do crédito da sessão.
-          </div>
-        </div>
-
-        <!-- FAQ Item 6 -->
-        <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden">
-          <button class="faq-toggle w-full p-6 text-left font-bold text-base md:text-lg text-brand-black flex items-center justify-between gap-4 hover:text-brand-accent transition-colors">
-            <span>Existe Cartão Presente (Gift Card)?</span>
-            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-accent transition-transform duration-300"></i>
-          </button>
-          <div class="faq-content hidden px-6 pb-6 text-sm text-brand-black/75 leading-relaxed border-t border-stone-100 pt-4">
-            Sim! Temos vouchers físicos em embalagem de luxo para retirada na clínica ou cartões digitais instantâneos para enviar por WhatsApp com mensagem personalizada.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- BOOKING & CONTACT FORM / WHATSAPP CTA -->
-  <section id="agendamento" class="py-24 bg-gradient-to-b from-[#0c0c0e] to-brand-dark text-white border-t border-white/10">
-    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
-      
-      <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Agendamento & Atendimento</span>
-      <h2 class="text-4xl md:text-6xl font-bold mt-3 mb-6">
-        Pronta para transformar a sua <span class="font-editorial italic font-normal text-brand-gold">pele</span>?
-      </h2>
-      <p class="text-brand-softGray text-base md:text-lg max-w-2xl mx-auto mb-10">
-        Fale diretamente com a nossa equipe de concierge pelo WhatsApp. Vamos entender suas metas e indicar o melhor protocolo para você.
-      </p>
-
-      <!-- Interactive Booking Card -->
-      <div class="bg-brand-darkCard p-8 md:p-12 rounded-3xl border border-white/15 max-w-xl mx-auto text-left shadow-2xl">
-        <form id="bookingForm" class="space-y-5" onsubmit="event.preventDefault(); sendWhatsAppBooking();">
-          
-          <div>
-            <label class="block text-xs uppercase tracking-wider font-semibold text-white/80 mb-2">Seu Nome Completo</label>
-            <input type="text" id="clientName" required placeholder="Ex: Ana Clara Martins" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors" />
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-wider font-semibold text-white/80 mb-2">Qual seu principal interesse?</label>
-            <select id="interestType" class="w-full bg-brand-charcoal border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors">
-              <option value="Primeira Visita (Facial Glow R$ 149)">✨ 1ª Visita (Facial Glow com desconto - R$ 149)</option>
-              <option value="Assinatura do Skin Club (Membro Mensal)">👑 Clube de Assinatura (Membro Mensal)</option>
-              <option value="Deluxe HydraFacial & LED">⚡ Deluxe HydraFacial & LED Therapy</option>
-              <option value="Tratamento para Acne ou Manchas">🎯 Tratamento para Acne ou Manchas</option>
-              <option value="Day Spa & Massoterapia">🌿 Day Spa & Massoterapia</option>
-              <option value="Dúvidas e Avaliação Geral">💬 Dúvidas e Avaliação Geral</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-wider font-semibold text-white/80 mb-2">Melhor período para atendimento</label>
-            <div class="grid grid-cols-3 gap-2">
-              <label class="flex items-center justify-center p-2.5 rounded-xl bg-brand-charcoal border border-white/10 text-xs cursor-pointer hover:border-brand-gold text-white has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/20">
-                <input type="radio" name="period" value="Manhã" checked class="hidden" />
-                <span>Manhã</span>
-              </label>
-              <label class="flex items-center justify-center p-2.5 rounded-xl bg-brand-charcoal border border-white/10 text-xs cursor-pointer hover:border-brand-gold text-white has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/20">
-                <input type="radio" name="period" value="Tarde" class="hidden" />
-                <span>Tarde</span>
-              </label>
-              <label class="flex items-center justify-center p-2.5 rounded-xl bg-brand-charcoal border border-white/10 text-xs cursor-pointer hover:border-brand-gold text-white has-[:checked]:border-brand-gold has-[:checked]:bg-brand-gold/20">
-                <input type="radio" name="period" value="Sábado" class="hidden" />
-                <span>Sábado</span>
-              </label>
-            </div>
-          </div>
-
-          <button type="submit" class="w-full py-4 rounded-full bg-brand-gold hover:bg-white text-black font-bold text-sm tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 mt-4">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-            <span>Iniciar Conversa no WhatsApp</span>
-          </button>
-        </form>
-
-        <p class="text-[11px] text-center text-white/50 mt-4 flex items-center justify-center gap-1">
-          <i data-lucide="lock" class="w-3.5 h-3.5"></i>
-          Atendimento humanizado e sem compromisso.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LUXURY FOOTER -->
-  <footer class="bg-black text-white/70 py-16 border-t border-white/10 text-xs">
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
-      
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        
-        <!-- Col 1: Brand Info -->
-        <div class="space-y-4 md:col-span-1">
-          <a href="#" class="flex items-center gap-2">
-            <span class="text-xl font-serif font-bold text-white uppercase">SKIN CLUB</span>
-            <span class="text-xl font-editorial italic text-brand-gold">brasil</span>
-          </a>
-          <p class="text-white/60 leading-relaxed text-xs">
-            Clube exclusivo de estética médica, saúde da pele e rituais de autocuidado em São José do Rio Preto.
-          </p>
-          <div class="flex items-center gap-4 text-white/80 pt-2">
-            <a href="https://www.instagram.com/skinclubbrasil/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors flex items-center gap-1.5" aria-label="Instagram">
-              <i data-lucide="instagram" class="w-5 h-5"></i>
-              <span class="font-medium text-xs">@skinclubbrasil</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 2: Navigation -->
-        <div class="space-y-3">
-          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Navegação</h5>
-          <ul class="space-y-2">
-            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Nós</a></li>
-            <li><a href="#servicos" class="hover:text-white transition-colors">Menu de Tratamentos</a></li>
-            <li><a href="#clube" class="hover:text-white transition-colors">Clube de Membros</a></li>
-            <li><a href="#equipe" class="hover:text-white transition-colors">Corpo Clínico</a></li>
-            <li><a href="#boutique" class="hover:text-white transition-colors">Boutique de Skincare</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Hours & Location -->
-        <div class="space-y-3">
-          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Unidade & Horários</h5>
-          <p class="text-white/80 leading-relaxed">
-            📍 São José do Rio Preto, SP<br />
-            (Bairro nobre / Fácil estacionamento)
-          </p>
-          <p class="text-white/60 leading-relaxed pt-1">
-            <strong>Segunda a Sexta:</strong> 08h às 20h<br />
-            <strong>Sábados:</strong> 09h às 16h
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">1. Regula Prima: Adhesio et Credita</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
           </p>
         </div>
 
-        <!-- Col 4: Instagram Feed Preview Call -->
-        <div class="space-y-3">
-          <h5 class="text-white font-bold text-xs uppercase tracking-wider">Acompanhe Nosso Feed</h5>
-          <p class="text-white/70 text-xs">
-            Dicas diárias de skincare, bastidores da clínica e resultados reais de nossas associadas.
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">2. Regula Secunda: Constancia et Beneficia</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.
           </p>
-          <a href="https://www.instagram.com/skinclubbrasil/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-gold hover:text-white transition-colors font-semibold">
-            <span>Seguir @skinclubbrasil</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </a>
+        </div>
+
+        <div class="p-3 bg-white rounded-2xl border border-stone-200/60 shadow-sm space-y-1">
+          <p class="font-semibold text-stone-900 text-xs sm:text-[13px]">3. Regula Tertia: Privilegia et Cancelatio</p>
+          <p class="text-[11px] text-stone-500 leading-relaxed">
+            Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          </p>
         </div>
 
       </div>
 
-      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 gap-4">
-        <p>© 2026 Skin Club Brasil. Todos os direitos reservados.</p>
-        <p>Desenvolvido com excelência estética • Design inspirado em referências globais de MedSpa</p>
+      <!-- Botão de Ação no Pop-up -->
+      <div class="pt-1">
+        <a 
+          href="https://wa.me/5517999999999?text=Ol%C3%A1%21+Gostaria+de+entender+as+regras+do+clube+de+assinatura+da+Skin+Club+Brasil." 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 px-4 rounded-full bg-[#26221F] text-[#FAF8F5] text-xs font-semibold tracking-wide flex items-center justify-center hover:bg-black transition shadow-sm"
+        >
+          Tirar Dúvidas no WhatsApp
+        </a>
       </div>
 
     </div>
-  </footer>
+  </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+
+  <!-- ================= JAVASCRIPT SIMPLES PARA OS MODAIS ================= -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      // Close mobile menu on link click
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-      });
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
     }
 
-    // Accordion Logic
-    document.querySelectorAll('.faq-toggle').forEach(button => {
-      button.addEventListener('click', () => {
-        const content = button.nextElementSibling;
-        const icon = button.querySelector('i');
-        const isOpen = !content.classList.contains('hidden');
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
 
-        // Close all other items
-        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-        document.querySelectorAll('.faq-toggle i').forEach(i => i.style.transform = 'rotate(0deg)');
-
-        if (!isOpen) {
-          content.classList.remove('hidden');
-          if (icon) icon.style.transform = 'rotate(180deg)';
-        }
-      });
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal('modalTreatments');
+        closeModal('modalClub');
+      }
     });
-
-    // WhatsApp Booking Redirect
-    function sendWhatsAppBooking() {
-      const name = document.getElementById('clientName').value;
-      const interest = document.getElementById('interestType').value;
-      const periodEl = document.querySelector('input[name="period"]:checked');
-      const period = periodEl ? periodEl.value : 'Flexível';
-
-      const message = `Olá! Gostaria de agendar um horário no Skin Club Brasil.%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Interesse:* ${encodeURIComponent(interest)}%0A*Período de preferência:* ${encodeURIComponent(period)}%0A%0AVi pelo site e gostaria de verificar as datas disponíveis! ✨`;
-      
-      // Abre o WhatsApp com a mensagem personalizada
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=5517999999999&text=${message}`;
-      window.open(whatsappUrl, '_blank');
-    }
   </script>
+
 </body>
 </html>
